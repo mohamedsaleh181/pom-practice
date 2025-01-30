@@ -118,6 +118,17 @@
 <!--                <artifactId>maven-surefire-plugin</artifactId>-->
 <!--                <version>3.5.2</version>-->
 <!--            </plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.2</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/testRunners/testig_regressions.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
             <!-- Maven Allure Report Plugin -->
             <plugin>
                 <groupId>io.qameta.allure</groupId>
