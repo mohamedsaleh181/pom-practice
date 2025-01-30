@@ -41,8 +41,8 @@ public class BaseTest implements ITestListener {
         loginpage = new LoginPage(page);
         loginUtil = new LoginUtil(page);
         TestAllureListener.setPage(page);
-        System.setProperty("allure.results.directory", "target/allure-results");
-        System.setProperty("allure.configuration.file", "src/test/resources/allure.properties");
+//        System.setProperty("allure.results.directory", "allure-results");
+//        System.setProperty("allure.configuration.file", "src/test/resources/allure.properties");
 
 //        homepage = new HomePage(page);
     }
