@@ -29,13 +29,13 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.m2/repository
-          key: maven-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}
+          key: maven-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}-${{ hashFiles('**/src/**') }}
           restore-keys: |
+            maven-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}-
             maven-${{ runner.os }}-
 
       # Step 4: Build the project and run tests
       - name: Build and run tests with Maven
-      # run only the target test runner that you need.
         run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testRunners/testig_regressions.xml -Dsurefire.failIfNoTests=false
 
       # Step 5: Generate Allure report
@@ -48,6 +48,7 @@ jobs:
         with:
           name: allure-report
           path: target/site/allure-maven-plugin
+
       # Publish the Allure Report to GitHub Pages
       - name: Deploy Allure Report to GitHub Pages
         if: github.ref == 'refs/heads/main' # Only deploy on the main branch
