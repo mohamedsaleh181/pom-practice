@@ -41,7 +41,7 @@ public class BaseTest implements ITestListener {
         loginpage = new LoginPage(page);
         loginUtil = new LoginUtil(page);
         TestAllureListener.setPage(page);
-        System.setProperty("allure.results.directory", "allure-results");
+        System.setProperty("allure.results.directory", "target/allure-results");
         System.setProperty("allure.configuration.file", "src/test/resources/allure.properties");
 
 //        homepage = new HomePage(page);
@@ -58,20 +58,13 @@ public class BaseTest implements ITestListener {
 
     @AfterClass
     public void tearDown () throws IOException {
-        Path videoPath = page.video().path();  // Get video file path
-        System.out.println("Video saved at: " + videoPath);
+//        Path videoPath = page.video().path();  // Get video file path
+//        System.out.println("Video saved at: " + videoPath);
         page.context().browser().close();
 //        Allure.addAttachment("Video", "video/webm", videoPath.toFile().toString());
-        Allure.addAttachment("Test Video", "video/mp4",
-                Files.newInputStream(videoPath), "mp4");
-        System.out.println("Video saved at: " + videoPath);
-        Files.delete(videoPath);
+//        Allure.addAttachment("Test Video", "video/mp4",
+//                Files.newInputStream(videoPath), "mp4");
+//        System.out.println("Video saved at: " + videoPath);
+//        Files.delete(videoPath);
     }
-
-
-
-
-
-
-
 }

@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="OrangeHRM test regression PW suite">
-<!--    <listeners>-->
-<!--        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>-->
-<!--&lt;!&ndash;        <listener class-name="com.qa.orangehrm.base.TestAllureListener"/>&ndash;&gt;-->
-<!--    </listeners>-->
     <test name="OrangeHRM Login Page Test">
-
         <classes>
-<!--            <class name="com.qa.orangehrm.tests.LoginPageTest"/>-->
             <class name="com.qa.orangehrm.tests.HomePageTest"/>
-<!--            <class name="com.qa.orangehrm.tests.HomePageTest"/>-->
-<!--                        <class name="com.qa.orangehrm.tests.ContactDetailsPageTest"/>-->
         </classes>
     </test>
 </suite>
