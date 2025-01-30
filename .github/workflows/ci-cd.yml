@@ -54,5 +54,5 @@ jobs:
         if: github.ref == 'refs/heads/main' # Only deploy on the main branch
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_PAT }}
           publish_dir: target/site/allure-maven-plugin
