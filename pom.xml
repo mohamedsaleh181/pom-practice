@@ -110,14 +110,11 @@
                         <allure.results.directory>target\allure-results</allure.results.directory>
                         <!-- from here allure will read result to generate a report   -->
                         <resultsDirectory>target\allure-results</resultsDirectory>
+                        <reportDirectory>target/site/allure-maven-plugin</reportDirectory>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-surefire-plugin</artifactId>-->
-<!--                <version>3.5.2</version>-->
-<!--            </plugin>-->
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
