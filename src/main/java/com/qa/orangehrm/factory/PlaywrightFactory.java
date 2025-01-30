@@ -28,7 +28,7 @@ public class PlaywrightFactory {
         playwright = Playwright.create();
         switch (browserName.toLowerCase()){
             case "chromium":
-                browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+                browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true));
                 break;
             case "firefox":
                 browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
