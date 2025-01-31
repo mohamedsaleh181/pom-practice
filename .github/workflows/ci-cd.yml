@@ -96,7 +96,7 @@ jobs:
         run: |
           java -cp target/classes:target/dependency/* EmailSender  
           
-          # Step 6: Send email with report link
+      # Step 6: Send email with report link
       - name: Send email with report link
         env:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
@@ -104,5 +104,5 @@ jobs:
           ALLURE_REPORT_LINK: ${{ secrets.ALLURE_REPORT_LINK }}
           RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
         run: |
-          java -cp target/classes:target/dependency/* SendEmail
+          java -cp target/classes:target/dependency/* EmailSender
 

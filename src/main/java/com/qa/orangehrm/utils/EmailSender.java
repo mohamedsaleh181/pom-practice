@@ -4,7 +4,7 @@ import jakarta.mail.internet.*;
 
 import java.util.Properties;
 
-public class SendEmail {
+public class EmailSender {
     public static void main(String[] args) {
         // Sender's email credentials
         String username = System.getenv("GMAIL_EMAIL"); // Your Gmail address
