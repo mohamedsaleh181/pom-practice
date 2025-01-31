@@ -1,21 +1,11 @@
 [ {
-  "uid" : "a35cb350296d1eff",
-  "name" : "setup",
-  "time" : {
-    "start" : 1738282531749,
-    "stop" : 1738282531752,
-    "duration" : 3
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "3653650ad88d1660",
+  "uid" : "77268bddfc26de90",
   "name" : "Test Home page profile name.",
   "time" : {
-    "start" : 1738282531804,
-    "stop" : 1738282531805,
-    "duration" : 1
+    "start" : 1738282913162,
+    "stop" : 1738282915536,
+    "duration" : 2374
   },
-  "status" : "skipped",
+  "status" : "passed",
   "severity" : "normal"
 } ]
