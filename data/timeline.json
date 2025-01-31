@@ -2,24 +2,36 @@
   "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
   "name" : "timeline",
   "children" : [ {
-    "name" : "fv-az1057-10",
+    "name" : "fv-az1065-242",
     "children" : [ {
-      "name" : "1975@fv-az1057-10.main(1)",
+      "name" : "2001@fv-az1065-242.main(1)",
       "children" : [ {
         "name" : "Test Home page profile name.",
-        "uid" : "77268bddfc26de90",
-        "parentUid" : "8bebbc022cb8ae7ba40710ef86a0df24",
-        "status" : "passed",
+        "uid" : "4384f45b82fc7e07",
+        "parentUid" : "c525d98dda730924e7e8946ed0bc3af1",
+        "status" : "skipped",
         "time" : {
-          "start" : 1738282913162,
-          "stop" : 1738282915536,
-          "duration" : 2374
+          "start" : 1738284151854,
+          "stop" : 1738284151855,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "setup",
+        "uid" : "515ea5b60523fb5d",
+        "parentUid" : "c525d98dda730924e7e8946ed0bc3af1",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738284151788,
+          "stop" : 1738284151790,
+          "duration" : 2
         },
         "flaky" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "8bebbc022cb8ae7ba40710ef86a0df24"
+      "uid" : "c525d98dda730924e7e8946ed0bc3af1"
     } ],
-    "uid" : "c914bb4cc9a3461c784e7298bc355599"
+    "uid" : "227fe2d4285424e2d9d972052398cfe5"
   } ]
 }
