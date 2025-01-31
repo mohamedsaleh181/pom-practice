@@ -104,5 +104,5 @@ jobs:
           ALLURE_REPORT_LINK: ${{ secrets.ALLURE_REPORT_LINK }}
           RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
         run: |
-          java -cp target/classes:target/dependency/* EmailSender
+          java -cp target/classes:target/dependency/* SendEmail
 
