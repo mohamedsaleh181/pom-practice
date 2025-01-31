@@ -1,0 +1,41 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "OrangeHRM test regression PW suite",
+    "children" : [ {
+      "name" : "OrangeHRM Login Page Test",
+      "children" : [ {
+        "name" : "com.qa.orangehrm.tests.HomePageTest",
+        "children" : [ {
+          "name" : "setup",
+          "uid" : "5dc12e070449f307",
+          "parentUid" : "7ab65793921575f50ad1ddf3a07271b5",
+          "status" : "broken",
+          "time" : {
+            "start" : 1738281724992,
+            "stop" : 1738281724994,
+            "duration" : 2
+          },
+          "flaky" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "Test Home page profile name.",
+          "uid" : "2f22f955d263feab",
+          "parentUid" : "7ab65793921575f50ad1ddf3a07271b5",
+          "status" : "skipped",
+          "time" : {
+            "start" : 1738281725046,
+            "stop" : 1738281725047,
+            "duration" : 1
+          },
+          "flaky" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "7ab65793921575f50ad1ddf3a07271b5"
+      } ],
+      "uid" : "06bd985d353110ff7134101b4a23cd03"
+    } ],
+    "uid" : "4e7f560ff58676ca5000ef90158c1430"
+  } ]
+}
