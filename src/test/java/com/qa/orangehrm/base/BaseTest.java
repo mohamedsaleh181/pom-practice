@@ -18,6 +18,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 
 public class BaseTest implements ITestListener {
@@ -66,5 +68,19 @@ public class BaseTest implements ITestListener {
 //                Files.newInputStream(videoPath), "mp4");
 //        System.out.println("Video saved at: " + videoPath);
 //        Files.delete(videoPath);
+    }
+
+    @AfterClass(dependsOnMethods = "tearDown")
+    public void attachVideo(){
+        String testName = this.getClass().getSimpleName();
+        String timestamp = (new SimpleDateFormat("dd-MM-yyyy HH-mm-ss-SSSS aaa")).format(new Date(System.currentTimeMillis()));
+        Path videoPath = page.video().path();
+        System.out.println("Video saved at: " + videoPath);
+        try {
+            Allure.addAttachment("Test Video "+ testName + " " + timestamp, "video/webm",
+                    Files.newInputStream(videoPath), "webm");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

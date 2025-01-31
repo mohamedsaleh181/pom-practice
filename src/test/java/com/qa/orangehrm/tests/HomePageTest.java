@@ -91,7 +91,8 @@ public class HomePageTest extends BaseTest {
 //        Allure.step("performing Login to the application.");
 //        takeScreenshot();
 //        takeScreenshot("Screenshot from home page");
-
+        attachScreenshot();
+        attachScreenshot("Screenshot from home page");
         Assert.assertTrue(homepage.isHomePage(), "Home page verification failed.");
 //        page.waitForTimeout(1000);
 //        log.info("Home page verification passed.");
@@ -102,86 +103,48 @@ public class HomePageTest extends BaseTest {
 //            Assert.fail("Failed to navigate to home page after login.");
 //        }
     }
-    public void takeScreenshot() {
-        try {
-            // Create a CDP session
-            CDPSession cdp = browserContext.newCDPSession(page);
-            // Take a screenshot via CDP
-            Gson gson = new Gson();
-            Map<String, Object> params = new HashMap<>();
-            params.put("format", "png");
-            params.put("captureBeyondViewport", true);
-            JsonElement jsonElement = gson.toJsonTree(params);
-            JsonObject parmsAsJsonObject = jsonElement.getAsJsonObject();
-
-            JsonObject jsonObject = cdp.send("Page.captureScreenshot", parmsAsJsonObject);
-            Map<String, JsonElement> result = jsonObject.asMap();
-
-            // Get the base64-encoded screenshot data
-            String base64Screenshot = result.get("data").toString();
-            // Remove leading & trailing quotes
-            base64Screenshot = base64Screenshot.replaceAll("^\"|\"$", "");
-            // Convert Base64 to byte array (to be a screenshot)
-            byte[] decodedScreenshot = Base64.getDecoder().decode(base64Screenshot);
-            String timestamp = (new SimpleDateFormat("dd-MM-yyyy HH-mm-ss-SSSS aaa")).format(new Date(System.currentTimeMillis()));
-
-            // Save the screenshot to a file (for reference)
-            Files.createDirectories(Paths.get("screenshots")); // Ensure directory exists
-            Files.write(Paths.get("screenshots/screenshot "+ timestamp +".png"), decodedScreenshot);
-
-            // Attach screenshot to Allure report using Allure.addAttachment
-            Allure.addAttachment( "ScreenShot " + timestamp, "image/png", new ByteArrayInputStream(decodedScreenshot), "png");
-            System.out.println("Screenshot saved as cdp-screenshot.png and attached to Allure report.");
-
-        } catch (Exception e) {
-            e.printStackTrace();
+    //######################################################################
+    public void attachScreenshot() {
+        if (page != null) {
+            try {
+                String testName = this.getClass().getSimpleName();
+                String timestamp = (new SimpleDateFormat("dd-MM-yyyy HH-mm-ss-SSSS aaa")).format(new Date(System.currentTimeMillis()));
+                String screenshotPath = "target/attachments/screenshots/" + testName + timestamp + ".png";
+                page.screenshot(new Page.ScreenshotOptions()
+                        .setPath(Paths.get(screenshotPath))
+                        .setFullPage(true));
+                Allure.addAttachment("Screenshot " + testName + " " + timestamp, Files.newInputStream(Paths.get(screenshotPath))); // Attach the screenshot to the report
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
-    public void takeScreenshot(String descripton) {
-        try {
-            // Create a CDP session
-            CDPSession cdp = browserContext.newCDPSession(page);
-            // Take a screenshot via CDP
-            Gson gson = new Gson();
-            Map<String, Object> params = new HashMap<>();
-            params.put("format", "png");
-            params.put("captureBeyondViewport", true);
-            JsonElement jsonElement = gson.toJsonTree(params);
-            JsonObject parmsAsJsonObject = jsonElement.getAsJsonObject();
-
-            JsonObject jsonObject = cdp.send("Page.captureScreenshot", parmsAsJsonObject);
-            Map<String, JsonElement> result = jsonObject.asMap();
-
-            // Get the base64-encoded screenshot data
-            String base64Screenshot = result.get("data").toString();
-            // Remove leading & trailing quotes
-            base64Screenshot = base64Screenshot.replaceAll("^\"|\"$", "");
-            // Convert Base64 to byte array (to be a screenshot)
-            byte[] decodedScreenshot = Base64.getDecoder().decode(base64Screenshot);
-            String timestamp = (new SimpleDateFormat("dd-MM-yyyy HH-mm-ss-SSSS aaa")).format(new Date(System.currentTimeMillis()));
-
-            // Save the screenshot to a file (for reference)
-            Files.createDirectories(Paths.get("screenshots")); // Ensure directory exists
-            Files.write(Paths.get("screenshots/screenshot "+ timestamp +".png"), decodedScreenshot);
-
-            // Attach screenshot to Allure report using Allure.addAttachment
-            Allure.addAttachment( "ScreenShot " + timestamp +" "+ descripton.trim(), "image/png", new ByteArrayInputStream(decodedScreenshot), "png");
-            System.out.println("Screenshot saved as to Allure report.");
-        } catch (Exception e) {
-            e.printStackTrace();
+    public void attachScreenshot(String description) {
+        if (page != null) {
+            try {
+                String testName = this.getClass().getSimpleName();
+                String timestamp = (new SimpleDateFormat("dd-MM-yyyy HH-mm-ss-SSSS aaa")).format(new Date(System.currentTimeMillis()));
+                String screenshotPath = "target/attachments/screenshots/" + testName + timestamp + ".png";
+                page.screenshot(new Page.ScreenshotOptions()
+                        .setPath(Paths.get(screenshotPath))
+                        .setFullPage(true));
+                Allure.addAttachment("Screenshot " + testName + " " + timestamp + " " + description, Files.newInputStream(Paths.get(screenshotPath))); // Attach the screenshot to the report
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
+    //######################################################################
     @AfterMethod
     public void tackScreenshot(ITestResult result){
         if (result.getStatus() == ITestResult.SUCCESS){
-            takeScreenshot("when test pass");
+            attachScreenshot("when test pass");
             log.info("screenshot taken successfully.");
         }
         if (result.getStatus() == ITestResult.FAILURE){
-            takeScreenshot("when test failed");
+            attachScreenshot("when test failed");
         }
     }
-//    #################################################################################
 
 }
 

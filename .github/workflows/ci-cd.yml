@@ -67,7 +67,7 @@ jobs:
           cat src/test/resources/testRunners/testig_regressions.xml
       # Step 4: Build the project and run tests
       - name: Build and run tests with Maven
-        run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testRunners/testig_regressions.xml -Dallure.results.directory=target/allure-results -X -e -Dsurefire.failIfNoTests=false
+        run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testRunners/testig_regressions.xml -Dallure.results.directory=target/allure-results -Dsurefire.failIfNoTests=false
 
       # Step 5: Generate Allure report
       - name: Generate Allure report
@@ -86,3 +86,23 @@ jobs:
         with:
           github_token: ${{ secrets.GH_PAT }}
           publish_dir: target/site/allure-maven-plugin
+
+      # Step 6: Send email with report link
+      - name: Send email with report link
+        env:
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
+          ALLURE_REPORT_LINK: ${{ secrets.ALLURE_REPORT_LINK }}
+        run: |
+          java -cp target/classes:target/dependency/* EmailSender  
+          
+          # Step 6: Send email with report link
+      - name: Send email with report link
+        env:
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
+          ALLURE_REPORT_LINK: ${{ secrets.ALLURE_REPORT_LINK }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+        run: |
+          java -cp target/classes:target/dependency/* EmailSender
+

@@ -1,7 +1,7 @@
 target/
 target/allure-results/
-logs/
-screenshots/
+attachments/logs/
+attachments/screenshots/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -39,4 +39,4 @@ build/
 
 ### Mac OS ###
 .DS_Store
-/videos/
+/attachments/videos/

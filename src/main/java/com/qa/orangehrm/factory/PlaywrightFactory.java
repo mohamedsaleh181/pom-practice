@@ -28,16 +28,16 @@ public class PlaywrightFactory {
         playwright = Playwright.create();
         switch (browserName.toLowerCase()){
             case "chromium":
-                browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+                browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true));
                 break;
             case "firefox":
-                browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
+                browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(true));
                 break;
             case "safari":
                 browser = playwright.webkit().launch(new BrowserType.LaunchOptions().setHeadless(false));
                 break;
             case "chrome":
-                browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(false));
+                browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(true));
                 break;
 
             default:
@@ -46,7 +46,7 @@ public class PlaywrightFactory {
         }
 
         browserContext = browser.newContext(new Browser.NewContextOptions()
-                .setRecordVideoDir(Paths.get("videos/"))  // Folder where videos will be saved
+                .setRecordVideoDir(Paths.get("target/attachments/videos/"))  // Folder where videos will be saved
                 .setRecordVideoSize(1280, 720));
         return browserContext;
 
