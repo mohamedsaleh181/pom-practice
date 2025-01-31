@@ -9,13 +9,13 @@
         "name" : "com.qa.orangehrm.tests.HomePageTest",
         "children" : [ {
           "name" : "Test Home page profile name.",
-          "uid" : "e42d946b8e975f6d",
+          "uid" : "8f102e7ca97f0b24",
           "parentUid" : "7ab65793921575f50ad1ddf3a07271b5",
           "status" : "passed",
           "time" : {
-            "start" : 1738357774000,
-            "stop" : 1738357776399,
-            "duration" : 2399
+            "start" : 1738358185617,
+            "stop" : 1738358187954,
+            "duration" : 2337
           },
           "flaky" : false,
           "parameters" : [ ]

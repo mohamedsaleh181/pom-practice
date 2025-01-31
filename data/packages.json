@@ -5,13 +5,13 @@
     "name" : "com.qa.orangehrm.tests.HomePageTest",
     "children" : [ {
       "name" : "profileNameTest",
-      "uid" : "e42d946b8e975f6d",
+      "uid" : "8f102e7ca97f0b24",
       "parentUid" : "def465d3175d10eb66c6bd0375183d8c",
       "status" : "passed",
       "time" : {
-        "start" : 1738357774000,
-        "stop" : 1738357776399,
-        "duration" : 2399
+        "start" : 1738358185617,
+        "stop" : 1738358187954,
+        "duration" : 2337
       },
       "flaky" : false,
       "parameters" : [ ]
