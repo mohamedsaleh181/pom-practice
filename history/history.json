@@ -1,41 +1,20 @@
 {
-  "af8cb1f197a488f383bd3c69b745a901" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 1,
-      "skipped" : 0,
-      "passed" : 0,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "40e9437faed6c090",
-      "status" : "broken",
-      "statusDetails" : "Error {\n  message='Target page, context or browser has been closed\nBrowser logs:\n\n╔════════════════════════════════════════════════════════════════════════════════════════════════╗\n║ Looks like you launched a headed browser without having a XServer running.                     ║\n║ Set either 'headless: true' or use 'xvfb-run <your-playwright-app>' before running Playwright. ║\n║                                                                                                ║\n║ <3 Playwright Team                                                                             ║\n╚════════════════════════════════════════════════════════════════════════════════════════════════╝\n  name='TargetClosedError\n  stack='TargetClosedError: Target page, context or browser has been closed\nBrowser logs:\n\n╔════════════════════════════════════════════════════════════════════════════════════════════════╗\n║ Looks like you launched a headed browser without having a XServer running.                     ║\n║ Set either 'headless: true' or use 'xvfb-run <your-playwright-app>' before running Playwright. ║\n║                                                                                                ║\n║ <3 Playwright Team                                                                             ║\n╚════════════════════════════════════════════════════════════════════════════════════════════════╝\n    at DispatcherConnection.dispatch (/tmp/playwright-java-11112948674002714914/package/lib/server/dispatchers/dispatcher.js:375:15)\n}\nCall log:\n- <launching> /home/runner/.cache/ms-playwright/firefox-1465/firefox/firefox -no-remote -wait-for-browser -foreground -profile /tmp/playwright_firefoxdev_profile-JHs7Ix -juggler-pipe -silent\n- <launched> pid=7697\n- [pid=7697][err] Error: no DISPLAY environment variable specified\n- [pid=7697] <process did exit: exitCode=1, signal=null>\n- [pid=7697] starting temporary directories cleanup\n",
-      "time" : {
-        "start" : 1738288296361,
-        "stop" : 1738288296362,
-        "duration" : 1
-      }
-    } ]
-  },
   "caed0b0f00dc77ec5b49ae9000b6975" : {
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
-      "skipped" : 1,
-      "passed" : 0,
+      "skipped" : 0,
+      "passed" : 1,
       "unknown" : 0,
       "total" : 1
     },
     "items" : [ {
-      "uid" : "841f6f7a617bc9e3",
-      "status" : "skipped",
-      "statusDetails" : "Error {\n  message='Target page, context or browser has been closed\nBrowser logs:\n\n╔════════════════════════════════════════════════════════════════════════════════════════════════╗\n║ Looks like you launched a headed browser without having a XServer running.                     ║\n║ Set either 'headless: true' or use 'xvfb-run <your-playwright-app>' before running Playwright. ║\n║                                                                                                ║\n║ <3 Playwright Team                                                                             ║\n╚════════════════════════════════════════════════════════════════════════════════════════════════╝\n  name='TargetClosedError\n  stack='TargetClosedError: Target page, context or browser has been closed\nBrowser logs:\n\n╔════════════════════════════════════════════════════════════════════════════════════════════════╗\n║ Looks like you launched a headed browser without having a XServer running.                     ║\n║ Set either 'headless: true' or use 'xvfb-run <your-playwright-app>' before running Playwright. ║\n║                                                                                                ║\n║ <3 Playwright Team                                                                             ║\n╚════════════════════════════════════════════════════════════════════════════════════════════════╝\n    at DispatcherConnection.dispatch (/tmp/playwright-java-11112948674002714914/package/lib/server/dispatchers/dispatcher.js:375:15)\n}\nCall log:\n- <launching> /home/runner/.cache/ms-playwright/firefox-1465/firefox/firefox -no-remote -wait-for-browser -foreground -profile /tmp/playwright_firefoxdev_profile-JHs7Ix -juggler-pipe -silent\n- <launched> pid=7697\n- [pid=7697][err] Error: no DISPLAY environment variable specified\n- [pid=7697] <process did exit: exitCode=1, signal=null>\n- [pid=7697] starting temporary directories cleanup\n",
+      "uid" : "50d39a523d39831d",
+      "status" : "passed",
       "time" : {
-        "start" : 1738288296420,
-        "stop" : 1738288296421,
-        "duration" : 1
+        "start" : 1738357513210,
+        "stop" : 1738357515502,
+        "duration" : 2292
       }
     } ]
   }

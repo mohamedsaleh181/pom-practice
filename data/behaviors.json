@@ -2,30 +2,18 @@
   "uid" : "b1a8273437954620fa374b796ffaacdd",
   "name" : "behaviors",
   "children" : [ {
-    "name" : "setup",
-    "uid" : "40e9437faed6c090",
-    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
-    "status" : "broken",
-    "time" : {
-      "start" : 1738288296361,
-      "stop" : 1738288296362,
-      "duration" : 1
-    },
-    "flaky" : false,
-    "parameters" : [ ]
-  }, {
     "name" : "Home Page Features.",
     "children" : [ {
       "name" : "valid elements.",
       "children" : [ {
         "name" : "Test Home page profile name.",
-        "uid" : "841f6f7a617bc9e3",
+        "uid" : "50d39a523d39831d",
         "parentUid" : "5d80498fe4eec6e0c030308d42daf7a0",
-        "status" : "skipped",
+        "status" : "passed",
         "time" : {
-          "start" : 1738288296420,
-          "stop" : 1738288296421,
-          "duration" : 1
+          "start" : 1738357513210,
+          "stop" : 1738357515502,
+          "duration" : 2292
         },
         "flaky" : false,
         "parameters" : [ ]
