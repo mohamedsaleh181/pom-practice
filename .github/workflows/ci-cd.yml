@@ -24,6 +24,12 @@ jobs:
           java-version: '21.0.1' # Use the Java version your project requires
           distribution: 'temurin'
 
+      # Step 3: Install Playwright dependencies
+      - name: Install Playwright dependencies
+        uses: microsoft/playwright-github-action@v1
+        with:
+          install-deps: true
+
       # Step 3: Cache Maven dependencies to speed up builds
       - name: Cache Maven dependencies
         uses: actions/cache@v3
