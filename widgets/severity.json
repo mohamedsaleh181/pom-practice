@@ -1,21 +1,21 @@
 [ {
-  "uid" : "2f22f955d263feab",
+  "uid" : "a35cb350296d1eff",
+  "name" : "setup",
+  "time" : {
+    "start" : 1738282531749,
+    "stop" : 1738282531752,
+    "duration" : 3
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "3653650ad88d1660",
   "name" : "Test Home page profile name.",
   "time" : {
-    "start" : 1738281725046,
-    "stop" : 1738281725047,
+    "start" : 1738282531804,
+    "stop" : 1738282531805,
     "duration" : 1
   },
   "status" : "skipped",
-  "severity" : "normal"
-}, {
-  "uid" : "5dc12e070449f307",
-  "name" : "setup",
-  "time" : {
-    "start" : 1738281724992,
-    "stop" : 1738281724994,
-    "duration" : 2
-  },
-  "status" : "broken",
   "severity" : "normal"
 } ]
