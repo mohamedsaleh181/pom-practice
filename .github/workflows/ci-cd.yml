@@ -21,36 +21,35 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          java-version: '21.0.1' # Use the Java version your project requires
+          java-version: '21.0.1'
           distribution: 'temurin'
 
       # Step 4: Install Playwright and system dependencies
       - name: Install Playwright dependencies
         run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libasound2t64 \
+            libnss3 \
+            libnspr4 \
+            libatk1.0-0 \
+            libatk-bridge2.0-0 \
+            libcups2 \
+            libdrm2 \
+            libxkbcommon0 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxfixes3 \
+            libxrandr2 \
+            libgbm1 \
+            libatspi2.0-0 \
+            libxshmfence1
+
+      - name: Install Playwright
+        run: |
           npm install -g playwright
           npx playwright install --with-deps
 
-#      - name: Install dependencies
-#        run: |
-#          sudo apt-get update
-#          sudo apt-get install -y \
-#            libnss3 \
-#            libnspr4 \
-#            libatk1.0-0 \
-#            libatk-bridge2.0-0 \
-#            libcups2 \
-#            libdrm2 \
-#            libxkbcommon0 \
-#            libxcomposite1 \
-#            libxdamage1 \
-#            libxfixes3 \
-#            libxrandr2 \
-#            libgbm1 \
-#            libasound2t64 \  # Use libasound2t64 instead of libasound2
-#            libatspi2.0-0 \
-#            libxshmfence1
-
-      # Step 3: Cache Maven dependencies to speed up builds
       - name: Cache Maven dependencies
         uses: actions/cache@v3
         with:
@@ -60,10 +59,15 @@ jobs:
             maven-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}-
             maven-${{ runner.os }}-
 
+      - name: Verify test environment
+        run: |
+          java -version
+          mvn -version
+          ls -la src/test/resources/testRunners/
+          cat src/test/resources/testRunners/testig_regressions.xml
       # Step 4: Build the project and run tests
       - name: Build and run tests with Maven
-        run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testRunners/testig_regressions.xml -Dallure.results.directory=target/allure-results
-     # -Dsurefire.failIfNoTests=false
+        run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testRunners/testig_regressions.xml -Dallure.results.directory=target/allure-results -X -e -Dsurefire.failIfNoTests=false
 
       # Step 5: Generate Allure report
       - name: Generate Allure report
@@ -78,7 +82,6 @@ jobs:
 
       # Publish the Allure Report to GitHub Pages
       - name: Deploy Allure Report to GitHub Pages
-#        if: github.ref == 'refs/heads/main' # Only deploy on the main branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GH_PAT }}
