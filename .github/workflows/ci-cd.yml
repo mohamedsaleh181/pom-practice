@@ -36,7 +36,8 @@ jobs:
 
       # Step 4: Build the project and run tests
       - name: Build and run tests with Maven
-        run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testRunners/testig_regressions.xml -Dsurefire.failIfNoTests=false
+        run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testRunners/testig_regressions.xml -Dallure.results.directory=target/allure-results
+#          -Dsurefire.failIfNoTests=false
 
       # Step 5: Generate Allure report
       - name: Generate Allure report
