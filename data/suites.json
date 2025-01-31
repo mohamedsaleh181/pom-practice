@@ -8,26 +8,14 @@
       "children" : [ {
         "name" : "com.qa.orangehrm.tests.HomePageTest",
         "children" : [ {
-          "name" : "setup",
-          "uid" : "99458adf53606350",
-          "parentUid" : "7ab65793921575f50ad1ddf3a07271b5",
-          "status" : "broken",
-          "time" : {
-            "start" : 1738287197172,
-            "stop" : 1738287197174,
-            "duration" : 2
-          },
-          "flaky" : false,
-          "parameters" : [ ]
-        }, {
           "name" : "Test Home page profile name.",
-          "uid" : "a9c237f3a64761d5",
+          "uid" : "a20cc57a8de045a",
           "parentUid" : "7ab65793921575f50ad1ddf3a07271b5",
-          "status" : "skipped",
+          "status" : "passed",
           "time" : {
-            "start" : 1738287197235,
-            "stop" : 1738287197236,
-            "duration" : 1
+            "start" : 1738287749921,
+            "stop" : 1738287754273,
+            "duration" : 4352
           },
           "flaky" : false,
           "parameters" : [ ]
