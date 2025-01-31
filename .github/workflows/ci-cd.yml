@@ -30,25 +30,25 @@ jobs:
           npm install -g playwright
           npx playwright install --with-deps
 
-      - name: Install system dependencies
+      - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-          libnss3 \
-          libnspr4 \
-          libatk1.0-0 \
-          libatk-bridge2.0-0 \
-          libcups2 \
-          libdrm2 \
-          libxkbcommon0 \
-          libxcomposite1 \
-          libxdamage1 \
-          libxfixes3 \
-          libxrandr2 \
-          libgbm1 \
-          libasound2 \
-          libatspi2.0-0 \
-          libxshmfence1
+            libnss3 \
+            libnspr4 \
+            libatk1.0-0 \
+            libatk-bridge2.0-0 \
+            libcups2 \
+            libdrm2 \
+            libxkbcommon0 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxfixes3 \
+            libxrandr2 \
+            libgbm1 \
+            libasound2t64 \ # Alternative to libasound2
+            libatspi2.0-0 \
+            libxshmfence1
 
       # Step 3: Cache Maven dependencies to speed up builds
       - name: Cache Maven dependencies
