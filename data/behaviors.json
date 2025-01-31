@@ -3,12 +3,12 @@
   "name" : "behaviors",
   "children" : [ {
     "name" : "setup",
-    "uid" : "515ea5b60523fb5d",
+    "uid" : "9472f71fa429d843",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "broken",
     "time" : {
-      "start" : 1738284151788,
-      "stop" : 1738284151790,
+      "start" : 1738286249550,
+      "stop" : 1738286249552,
       "duration" : 2
     },
     "flaky" : false,
@@ -19,12 +19,12 @@
       "name" : "valid elements.",
       "children" : [ {
         "name" : "Test Home page profile name.",
-        "uid" : "4384f45b82fc7e07",
+        "uid" : "b3586310a41b05be",
         "parentUid" : "5d80498fe4eec6e0c030308d42daf7a0",
         "status" : "skipped",
         "time" : {
-          "start" : 1738284151854,
-          "stop" : 1738284151855,
+          "start" : 1738286249609,
+          "stop" : 1738286249610,
           "duration" : 1
         },
         "flaky" : false,
