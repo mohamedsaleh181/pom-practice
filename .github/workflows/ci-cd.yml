@@ -104,5 +104,7 @@ jobs:
           ALLURE_REPORT_LINK: ${{ secrets.ALLURE_REPORT_LINK }}
           RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
         run: |
-          java -cp target/classes:target/dependency/* EmailSender
+          mvn dependency:copy -Dartifact=com.sun.mail:jakarta.mail:2.0.1 -DoutputDirectory=target/dependency
+          java -cp src/main/java/com/qa/orangehrm/utils:target/dependency/* EmailSender
+#          java -cp target/classes:target/dependency/* com.qa.orangehrm.utils.EmailSender
 
