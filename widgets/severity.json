@@ -1,10 +1,10 @@
 [ {
-  "uid" : "e91097705a8a83f4",
+  "uid" : "fa7b2d118fc79f44",
   "name" : "Test Home page profile name.",
   "time" : {
-    "start" : 1738374560904,
-    "stop" : 1738374564361,
-    "duration" : 3457
+    "start" : 1738375067191,
+    "stop" : 1738375070738,
+    "duration" : 3547
   },
   "status" : "passed",
   "severity" : "normal"
