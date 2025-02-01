@@ -7,13 +7,13 @@
       "name" : "valid elements.",
       "children" : [ {
         "name" : "Test Home page profile name.",
-        "uid" : "8f102e7ca97f0b24",
+        "uid" : "28f6c95f6f7128c1",
         "parentUid" : "5d80498fe4eec6e0c030308d42daf7a0",
         "status" : "passed",
         "time" : {
-          "start" : 1738358185617,
-          "stop" : 1738358187954,
-          "duration" : 2337
+          "start" : 1738368561608,
+          "stop" : 1738368564648,
+          "duration" : 3040
         },
         "flaky" : false,
         "parameters" : [ ]
