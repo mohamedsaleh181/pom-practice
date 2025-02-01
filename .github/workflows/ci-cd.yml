@@ -86,15 +86,6 @@ jobs:
         with:
           github_token: ${{ secrets.GH_PAT }}
           publish_dir: target/site/allure-maven-plugin
-
-      # Step 6: Send email with report link
-      - name: Send email with report link
-        env:
-          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
-          GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
-          ALLURE_REPORT_LINK: ${{ secrets.ALLURE_REPORT_LINK }}
-        run: |
-          java -cp target/classes:target/dependency/* EmailSender  
           
       # Step 6: Send email with report link
       - name: Send email with report link
