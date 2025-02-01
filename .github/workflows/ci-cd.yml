@@ -101,7 +101,7 @@ jobs:
         run: |
           # Download jakarta.mail dependency
           mvn dependency:copy -Dartifact=com.sun.mail:jakarta.mail:2.0.1 -DoutputDirectory=target/dependency
-
+          mvn dependency:copy -Dartifact=com.sun.activation:jakarta.activation:2.0.1 -DoutputDirectory=target/dependency
           # Compile EmailSender.java
           mkdir -p target/classes
           javac -cp target/dependency/* -d target/classes src/main/java/com/qa/orangehrm/utils/EmailSender.java
