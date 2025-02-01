@@ -24,7 +24,7 @@ jobs:
           java-version: '21.0.1'
           distribution: 'temurin'
 
-      # Step 4: Install Playwright and system dependencies
+      # Step 3: Install Playwright and system dependencies
       - name: Install Playwright dependencies
         run: |
           sudo apt-get update
@@ -50,6 +50,7 @@ jobs:
           npm install -g playwright
           npx playwright install --with-deps
 
+      # Step 4: Cache Maven dependencies
       - name: Cache Maven dependencies
         uses: actions/cache@v3
         with:
@@ -59,34 +60,38 @@ jobs:
             maven-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}-
             maven-${{ runner.os }}-
 
+      # Step 5: Verify test environment
       - name: Verify test environment
         run: |
           java -version
           mvn -version
           ls -la src/test/resources/testRunners/
           cat src/test/resources/testRunners/testig_regressions.xml
-      # Step 4: Build the project and run tests
-      - name: Build and run tests with Maven
-        run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testRunners/testig_regressions.xml -Dallure.results.directory=target/allure-results -Dsurefire.failIfNoTests=false
 
-      # Step 5: Generate Allure report
+      # Step 6: Build the project and run tests
+      - name: Build and run tests with Maven
+        run: |
+          mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testRunners/testig_regressions.xml -Dallure.results.directory=target/allure-results -Dsurefire.failIfNoTests=false
+
+      # Step 7: Generate Allure report
       - name: Generate Allure report
         run: mvn allure:report
 
-      # Step 6: Upload Allure report as an artifact
+      # Step 8: Upload Allure report as an artifact
       - name: Upload Allure report
         uses: actions/upload-artifact@v4
         with:
           name: allure-report
           path: target/site/allure-maven-plugin
 
-      # Publish the Allure Report to GitHub Pages
+      # Step 9: Publish the Allure Report to GitHub Pages
       - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GH_PAT }}
           publish_dir: target/site/allure-maven-plugin
-          
+
+      # Step 10: Send email with report link
       - name: Send email with report link
         env:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
@@ -94,7 +99,12 @@ jobs:
           ALLURE_REPORT_LINK: ${{ secrets.ALLURE_REPORT_LINK }}
           RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
         run: |
+          # Download jakarta.mail dependency
           mvn dependency:copy -Dartifact=com.sun.mail:jakarta.mail:2.0.1 -DoutputDirectory=target/dependency
-          javac -cp target/dependency/* -d target/classes src/main/java/com/qa/orangehrm/utils/EmailSender.java
-#          cp src/main/java/com/qa/orangehrm/utils/EmailSender.java target/classes
 
+          # Compile EmailSender.java
+          mkdir -p target/classes
+          javac -cp target/dependency/* -d target/classes src/main/java/com/qa/orangehrm/utils/EmailSender.java
+
+          # Run EmailSender
+          java -cp target/classes:target/dependency/* com.qa.orangehrm.utils.EmailSender
