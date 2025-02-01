@@ -87,7 +87,6 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           publish_dir: target/site/allure-maven-plugin
           
-      # Step 6: Send email with report link
       - name: Send email with report link
         env:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
@@ -96,7 +95,6 @@ jobs:
           RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
         run: |
           mvn dependency:copy -Dartifact=com.sun.mail:jakarta.mail:2.0.1 -DoutputDirectory=target/dependency
-          cp src/main/java/com/qa/orangehrm/utils/EmailSender.java target/classes
-#          java -cp target/classes:target/dependency/* EmailSender
-          javac -cp target/dependency/* -d target/classes EmailSender.java
+          javac -cp target/dependency/* -d target/classes src/main/java/com/qa/orangehrm/utils/EmailSender.java
+#          cp src/main/java/com/qa/orangehrm/utils/EmailSender.java target/classes
 
