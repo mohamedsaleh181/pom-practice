@@ -104,7 +104,8 @@ jobs:
           mvn dependency:copy -Dartifact=com.sun.activation:jakarta.activation:2.0.1 -DoutputDirectory=target/dependency
           # Compile EmailSender.java
           mkdir -p target/classes
-          javac -cp target/dependency/* -d target/classes src/main/java/com/qa/orangehrm/utils/EmailSender.java
+          cp src/main/java/com/qa/orangehrm/utils/EmailSender.java target/classes
+          javac -cp "target/dependency/*" -d target/classes target/classes/EmailSender.java
 
           # Run EmailSender
-          java -cp target/classes:target/dependency/* com.qa.orangehrm.utils.EmailSender
+          java -cp "target/classes:target/dependency/*" target/classes/EmailSender.java
