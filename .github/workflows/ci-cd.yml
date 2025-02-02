@@ -47,7 +47,7 @@ jobs:
 
       - name: Install Playwright
         run: |
-          npm install -g playwright
+          npm install -g playwright@latest
           npx playwright install --with-deps
       # Step Install Chrome
       - name: Install Chrome
