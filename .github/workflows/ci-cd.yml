@@ -49,7 +49,12 @@ jobs:
         run: |
           npm install -g playwright
           npx playwright install --with-deps
-
+      # Step Install Chrome
+      - run:
+          name: Install Chrome
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y google-chrome-stable
       # Step 4: Cache Maven dependencies
       - name: Cache Maven dependencies
         uses: actions/cache@v3
