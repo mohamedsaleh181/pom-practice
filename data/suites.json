@@ -9,25 +9,25 @@
         "name" : "com.qa.orangehrm.tests.HomePageTest",
         "children" : [ {
           "name" : "setup",
-          "uid" : "d4519cc5a241bc1e",
+          "uid" : "212341d299991a0e",
           "parentUid" : "7ab65793921575f50ad1ddf3a07271b5",
           "status" : "broken",
           "time" : {
-            "start" : 1738522529015,
-            "stop" : 1738522529017,
+            "start" : 1738522876767,
+            "stop" : 1738522876769,
             "duration" : 2
           },
           "flaky" : false,
           "parameters" : [ ]
         }, {
           "name" : "Test Home page profile name.",
-          "uid" : "6d354bcab420dae1",
+          "uid" : "271eb3c7565f8ff0",
           "parentUid" : "7ab65793921575f50ad1ddf3a07271b5",
           "status" : "skipped",
           "time" : {
-            "start" : 1738522529077,
-            "stop" : 1738522529079,
-            "duration" : 2
+            "start" : 1738522876819,
+            "stop" : 1738522876820,
+            "duration" : 1
           },
           "flaky" : false,
           "parameters" : [ ]

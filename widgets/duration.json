@@ -1,21 +1,21 @@
 [ {
-  "uid" : "d4519cc5a241bc1e",
+  "uid" : "271eb3c7565f8ff0",
+  "name" : "Test Home page profile name.",
+  "time" : {
+    "start" : 1738522876819,
+    "stop" : 1738522876820,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "212341d299991a0e",
   "name" : "setup",
   "time" : {
-    "start" : 1738522529015,
-    "stop" : 1738522529017,
+    "start" : 1738522876767,
+    "stop" : 1738522876769,
     "duration" : 2
   },
   "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "6d354bcab420dae1",
-  "name" : "Test Home page profile name.",
-  "time" : {
-    "start" : 1738522529077,
-    "stop" : 1738522529079,
-    "duration" : 2
-  },
-  "status" : "skipped",
   "severity" : "normal"
 } ]
