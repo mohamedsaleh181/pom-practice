@@ -1,3 +1,2 @@
 "Status","Name","Duration in ms","Description"
-"skipped","com.qa.orangehrm.tests.HomePageTest.profileNameTest","1",""
-"broken","com.qa.orangehrm.base.BaseTest.setup","2",""
+"broken","com.qa.orangehrm.tests.HomePageTest.profileNameTest","30009",""
