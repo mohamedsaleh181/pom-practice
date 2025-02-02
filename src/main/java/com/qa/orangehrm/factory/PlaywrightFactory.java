@@ -37,7 +37,7 @@ public class PlaywrightFactory {
                 browser = playwright.webkit().launch(new BrowserType.LaunchOptions().setHeadless(false));
                 break;
             case "chrome":
-                browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(true));
+                browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true).setTimeout(60000));
                 break;
 
             default:
