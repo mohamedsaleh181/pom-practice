@@ -1,21 +1,21 @@
 {
-  "uid" : "3b0e517c47572834",
+  "uid" : "c8d3a15cf07bf829",
   "name" : "Test Home page profile name.",
   "fullName" : "com.qa.orangehrm.tests.HomePageTest.profileNameTest",
   "historyId" : "caed0b0f00dc77ec5b49ae9000b6975",
   "time" : {
-    "start" : 1738573773441,
-    "stop" : 1738573776515,
-    "duration" : 3074
+    "start" : 1738574050199,
+    "stop" : 1738574053800,
+    "duration" : 3601
   },
   "status" : "passed",
   "flaky" : false,
   "beforeStages" : [ {
     "name" : "setup",
     "time" : {
-      "start" : 1738573761200,
-      "stop" : 1738573773408,
-      "duration" : 12208
+      "start" : 1738574037215,
+      "stop" : 1738574050165,
+      "duration" : 12950
     },
     "description" : "",
     "status" : "passed",
@@ -31,17 +31,17 @@
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ {
-      "uid" : "634318b47756bc54",
-      "name" : "Screenshot HomePageTest 03-02-2025 09-09-36-0049 AM",
-      "source" : "634318b47756bc54.png",
+      "uid" : "c05674bf5ff38d1",
+      "name" : "Screenshot HomePageTest 03-02-2025 09-14-13-0340 AM",
+      "source" : "c05674bf5ff38d1.png",
       "type" : "image/png",
-      "size" : 180200
+      "size" : 182599
     }, {
-      "uid" : "1fecfee96efd81f2",
-      "name" : "Screenshot HomePageTest 03-02-2025 09-09-36-0294 AM Screenshot from home page",
-      "source" : "1fecfee96efd81f2.png",
+      "uid" : "5a8c1655059105a8",
+      "name" : "Screenshot HomePageTest 03-02-2025 09-14-13-0570 AM Screenshot from home page",
+      "source" : "5a8c1655059105a8.png",
       "type" : "image/png",
-      "size" : 182248
+      "size" : 181769
     } ],
     "parameters" : [ ],
     "stepsCount" : 0,
@@ -50,11 +50,33 @@
     "hasContent" : true
   },
   "afterStages" : [ {
+    "name" : "tackScreenshot",
+    "time" : {
+      "start" : 1738574053843,
+      "stop" : 1738574054029,
+      "duration" : 186
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "30a8d565e76f7ee5",
+      "name" : "Screenshot HomePageTest 03-02-2025 09-14-13-0843 AM when test pass",
+      "source" : "30a8d565e76f7ee5.png",
+      "type" : "image/png",
+      "size" : 181342
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  }, {
     "name" : "tearDown",
     "time" : {
-      "start" : 1738573776771,
-      "stop" : 1738573776820,
-      "duration" : 49
+      "start" : 1738574054043,
+      "stop" : 1738574054095,
+      "duration" : 52
     },
     "description" : "",
     "status" : "passed",
@@ -68,41 +90,19 @@
   }, {
     "name" : "attachVideo",
     "time" : {
-      "start" : 1738573776821,
-      "stop" : 1738573776822,
-      "duration" : 1
+      "start" : 1738574054095,
+      "stop" : 1738574054097,
+      "duration" : 2
     },
     "description" : "",
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ {
-      "uid" : "e4ac129a0e536784",
-      "name" : "Test Video HomePageTest 03-02-2025 09-09-36-0821 AM",
-      "source" : "e4ac129a0e536784.webm",
+      "uid" : "3bf06faeebad6b2b",
+      "name" : "Test Video HomePageTest 03-02-2025 09-14-14-0095 AM",
+      "source" : "3bf06faeebad6b2b.webm",
       "type" : "video/webm",
       "size" : 0
-    } ],
-    "parameters" : [ ],
-    "stepsCount" : 0,
-    "attachmentsCount" : 1,
-    "shouldDisplayMessage" : false,
-    "hasContent" : true
-  }, {
-    "name" : "tackScreenshot",
-    "time" : {
-      "start" : 1738573776569,
-      "stop" : 1738573776759,
-      "duration" : 190
-    },
-    "description" : "",
-    "status" : "passed",
-    "steps" : [ ],
-    "attachments" : [ {
-      "uid" : "d63b438fc84252e3",
-      "name" : "Screenshot HomePageTest 03-02-2025 09-09-36-0569 AM when test pass",
-      "source" : "d63b438fc84252e3.png",
-      "type" : "image/png",
-      "size" : 181064
     } ],
     "parameters" : [ ],
     "stepsCount" : 0,
@@ -130,10 +130,10 @@
     "value" : "com.qa.orangehrm.tests.HomePageTest"
   }, {
     "name" : "host",
-    "value" : "fv-az1784-514"
+    "value" : "fv-az1334-115"
   }, {
     "name" : "thread",
-    "value" : "6758@fv-az1784-514.main(1)"
+    "value" : "6680@fv-az1334-115.main(1)"
   }, {
     "name" : "framework",
     "value" : "testng"
@@ -163,6 +163,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "3b0e517c47572834.json",
+  "source" : "c8d3a15cf07bf829.json",
   "parameterValues" : [ ]
 }
