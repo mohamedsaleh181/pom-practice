@@ -1,25 +1,5 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "name" : "categories",
-  "children" : [ {
-    "name" : "Test defects",
-    "children" : [ {
-      "name" : "Error {\n  message='Timeout 30000ms exceeded.\n  name='TimeoutError\n  stack='TimeoutError: Timeout 30000ms exceeded.\n    at ProgressController.run (/tmp/playwright-java-9452436601513448154/package/lib/server/progress.js:78:26)\n    at Frame.fill (/tmp/playwright-java-9452436601513448154/package/lib/server/frames.js:1063:23)\n    at FrameDispatcher.fill (/tmp/playwright-java-9452436601513448154/package/lib/server/dispatchers/frameDispatcher.js:169:30)\n    at FrameDispatcher._handleCommand (/tmp/playwright-java-9452436601513448154/package/lib/server/dispatchers/dispatcher.js:94:40)\n    at DispatcherConnection.dispatch (/tmp/playwright-java-9452436601513448154/package/lib/server/dispatchers/dispatcher.js:361:39)\n}\nCall log:\n- waiting for getByPlaceholder(\"Username\")\n",
-      "children" : [ {
-        "name" : "Test Home page profile name.",
-        "uid" : "da277baf4545c507",
-        "parentUid" : "c94a590ff4113413c91ea4e0a92f85a5",
-        "status" : "broken",
-        "time" : {
-          "start" : 1738523118307,
-          "stop" : 1738523148316,
-          "duration" : 30009
-        },
-        "flaky" : false,
-        "parameters" : [ ]
-      } ],
-      "uid" : "c94a590ff4113413c91ea4e0a92f85a5"
-    } ],
-    "uid" : "bdbf199525818fae7a8651db9eafe741"
-  } ]
+  "children" : [ ]
 }
